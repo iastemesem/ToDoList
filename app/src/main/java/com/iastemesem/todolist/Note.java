@@ -14,7 +14,7 @@ public class Note {
     private static int mese = cal.get(Calendar.MONTH);
     private static int anno = cal.get(Calendar.YEAR);
     public static final String TODAY_DATE = ""+giorno+"/"+mese+"/"+anno;
-    public static final String DEADLNE_DATE = ""+(giorno+7)+"/"+mese+"/"+anno;
+    public static final String DEADLNE_DATE = ""+(giorno+7)+"/"+mese+""+anno;
     private Date d = new Date();
     private String title;
     private String dataCreazione;

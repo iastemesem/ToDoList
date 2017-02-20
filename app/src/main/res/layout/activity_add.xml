@@ -1,23 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/toolbar" android:id="@+id/add_toolbar"> </include>
+<RelativeLayout
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/add_linear_layout"
+    android:layout_below="@id/add_toolbar"
     android:padding="10dp">
+
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Finish"
-        android:layout_alignParentEnd="true"
-        android:id="@+id/add_dateend" />
+        android:layout_alignParentRight="true"
+        android:id="@+id/add_dateend"
+        android:layout_below="@id/add_toolbar"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/add_todayDate"
         android:text="Start"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="5dp"/>
+        android:layout_marginBottom="5dp"
+        android:layout_below="@id/add_toolbar"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -51,25 +60,7 @@
         android:layout_below="@id/add_object_TV"
         android:background="@color/colorPrimaryLight"/>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/aggiungi"
-        style="@style/Base.Widget.AppCompat.Button.Borderless"
-        android:textColor="@color/colorPrimary"
-        android:id="@+id/add_btnAdd"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"/>
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        style="@style/Base.Widget.AppCompat.Button.Borderless"
-        android:textColor="@color/colorPrimary"
-        android:text="@string/annulla"
-        android:id="@+id/add_cancelbtn"
-        android:layout_alignParentBottom="true"/>
-
+</RelativeLayout>
 
 
 </RelativeLayout>

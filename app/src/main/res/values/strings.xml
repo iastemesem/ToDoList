@@ -11,4 +11,5 @@
     <string name="dataModifica"> Date Modified</string>
     <string name="dataScadenza"> Deadline Date </string>
     <string name="status">Status</string>
+    <string name="confirm"> Conferma </string>
 </resources>

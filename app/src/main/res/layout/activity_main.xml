@@ -6,19 +6,6 @@
     android:clipToPadding="false"
     android:orientation="vertical"
     android:id="@+id/main_layout">
-    <Toolbar
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/main_toolbar"
-        android:background="@color/colorPrimaryDark">
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@color/colorIcons"
-        android:text="To Do List"
-        android:textSize="25dp"
-        android:layout_alignParentStart="true" />
-    </Toolbar>
 
     <android.support.design.widget.FloatingActionButton
         android:layout_width="wrap_content"
@@ -29,12 +16,17 @@
         android:layout_margin="@dimen/material_component_floating_action_button_margin"
         android:layout_alignParentRight="true" />
 
+    <include layout="@layout/toolbar"
+        android:id="@+id/main_toolbar"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent">
+    </include>
+
+
     <android.support.v7.widget.RecyclerView
         android:layout_width="match_parent"
         android:id="@+id/note_RV"
         android:layout_height="match_parent"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
         android:layout_below="@id/main_toolbar"/>
 
 

@@ -1,28 +1,38 @@
 package com.iastemesem.todolist;
 
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
+
 /**
  * Created by Gianfranco on 20/02/2017.
  */
 
 public class Note {
+    private static  Calendar cal = new GregorianCalendar();
+    private static int giorno = cal.get(Calendar.DAY_OF_MONTH);
+    private static int mese = cal.get(Calendar.MONTH);
+    private static int anno = cal.get(Calendar.YEAR);
+    public static final String TODAY_DATE = ""+giorno+"/"+mese+"/"+anno;
+    public static final String DEADLNE_DATE = ""+(giorno+7)+"/"+mese+"/"+anno;
+    private Date d = new Date();
     private String title;
     private String dataCreazione;
     private String ultimaModifica;
     private String body;
     private String dataScadenza;
-    private enum stato{
+    public  enum stato{
         COMPLETE,
         DELETE,
         ARCHIVED,
         RUNNING
     }
 
-    public Note(String dataCreazione, String title, String body, String dataScadenza, String ultimaModifica) {
-        this.dataCreazione = dataCreazione;
+    public Note( String title, String body) {
         this.title = title;
         this.body = body;
-        this.dataScadenza = dataScadenza;
-        this.ultimaModifica = ultimaModifica;
+        this.dataCreazione = TODAY_DATE;
+        this.dataScadenza = DEADLNE_DATE;
     }
 
     public String getDataScadenza() {
@@ -51,10 +61,6 @@ public class Note {
 
     public String getDataCreazione() {
         return dataCreazione;
-    }
-
-    public void setDataCreazione(String dataCreazione) {
-        this.dataCreazione = dataCreazione;
     }
 
     public String getTitle() {

@@ -1,6 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:padding="10dp">
 
-</LinearLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Finish"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/add_dateend" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/add_todayDate"
+        android:text="Start"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="5dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/titolo"
+        android:id="@+id/add_title_TV"
+        android:layout_below="@id/add_todayDate"
+        android:layout_marginBottom="5dp"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/titolo"
+        android:id="@+id/add_title_ET"
+        android:layout_below="@id/add_title_TV"
+        android:background="@color/colorPrimaryLight"
+        android:layout_marginBottom="10dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/oggetto"
+        android:id="@+id/add_object_TV"
+        android:layout_below="@id/add_title_ET"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/oggetto"
+        android:id="@+id/add_object_ET"
+        android:layout_below="@id/add_object_TV"
+        android:background="@color/colorPrimaryLight"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/aggiungi"
+        style="@style/Base.Widget.AppCompat.Button.Borderless"
+        android:textColor="@color/colorPrimary"
+        android:id="@+id/add_btnAdd"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/Base.Widget.AppCompat.Button.Borderless"
+        android:textColor="@color/colorPrimary"
+        android:text="@string/annulla"
+        android:id="@+id/add_cancelbtn"
+        android:layout_alignParentBottom="true"/>
+
+
+
+</RelativeLayout>

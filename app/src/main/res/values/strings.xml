@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">ToDoList</string>
+    <string name="titolo"> Title </string>
+    <string name="oggetto"> Object </string>
+    <string name="toDo"> To do </string>
+    <string name="archiviate"> Archived </string>
+    <string name="aggiungi"> Add </string>
+    <string name="annulla"> Cancel </string>
+    <string name="modifica"> Update </string>
+    <string name="dataCreazione"> Creation Date </string>
+    <string name="dataModifica"> Date Modified</string>
+    <string name="dataScadenza"> Deadline Date </string>
+</resources>

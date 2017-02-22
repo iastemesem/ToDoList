@@ -12,4 +12,6 @@
     <string name="dataScadenza"> Deadline Date </string>
     <string name="status">Status</string>
     <string name="confirm"> Conferma </string>
+    <string name="update">Update</string>
+    <string name="delete">Delete</string>
 </resources>

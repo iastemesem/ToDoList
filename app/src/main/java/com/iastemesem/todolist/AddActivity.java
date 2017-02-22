@@ -27,13 +27,10 @@ public class AddActivity extends AppCompatActivity implements View.OnClickListen
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add);
-        dateEnd = (TextView)findViewById(R.id.add_dateend);
-        dateStart = (TextView) findViewById(R.id.add_todayDate);
         title = (EditText) findViewById(R.id.add_title_ET);
         object = (EditText) findViewById(R.id.add_object_ET);
 
-        dateStart.setText(Note.TODAY_DATE);
-        dateEnd.setText(Note.DEADLNE_DATE);
+
 
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.add_toolbar);

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    <include layout="@layout/toolbar" android:id="@+id/update_toolbar"> </include>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_below="@id/update_toolbar"
+        android:padding="10dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/titolo"
+            android:id="@+id/update_title_TV"
+            android:layout_below="@+id/update_toolbar"
+            android:textColor="@color/colorPrimaryDark"
+            android:layout_marginBottom="5dp"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/update_title_ET"
+            android:text="@string/titolo"
+            android:layout_below="@id/update_title_TV"
+            android:textDirection="firstStrong"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/oggetto"
+            android:id="@+id/update_oggetto_TV"
+            android:layout_below="@+id/update_title_ET"
+            android:textColor="@color/colorPrimaryDark"
+            android:layout_marginBottom="5dp"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="top"
+            android:id="@+id/update_body_ET"
+            android:text="@string/oggetto"
+            android:layout_below="@id/update_oggetto_TV"
+            />
+
+    </LinearLayout>
+
+
+</RelativeLayout>

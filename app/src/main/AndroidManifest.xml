@@ -3,13 +3,14 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/note"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         
-        <activity android:name=".MainActivity"
-            android:label="@string/app_name"
+        <activity
+            android:label="ToDo List"
+            android:name=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -20,8 +21,9 @@
         <activity
             android:label="New Note"
             android:name=".AddActivity">
-
         </activity>
+
+        <activity android:label="Update Activity" android:name=".UpdateActivity"></activity>
 
     </application>
 

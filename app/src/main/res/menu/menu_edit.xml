@@ -4,7 +4,7 @@
     <item
         android:id="@+id/action_confirm"
         android:orderInCategory="100"
-        android:icon="@drawable/ic_check_black_24dp"
+        android:icon="@drawable/ic_check_grey600_24dp"
         android:title="@string/confirm"
         app:showAsAction="always"
         />

@@ -2,28 +2,11 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:background="@color/colorPrimaryDark"
+    android:background="@color/colorIcons"
     android:padding="10dp"
-    android:layout_marginTop="5dp"
-   android:layout_marginBottom="5dp">
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/dataCreazione"
-        android:id="@+id/item_creationDate_tv"
-        android:layout_marginBottom="5dp"
-        android:textSize="12dp"
-        android:textColor="@color/colorIcons"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/dataScadenza"
-        android:id="@+id/item_dataScadenza_tv"
-        android:layout_alignParentRight="true"
-        android:layout_marginBottom="5dp"
-        android:textSize="12dp"
-        android:textColor="@color/colorIcons"/>
-
+    android:layout_margin="10dp"
+    android:elevation="10dp"
+    android:id="@+id/item_note_activity">
 
     <TextView
         android:layout_width="wrap_content"
@@ -31,8 +14,7 @@
         android:text="@string/titolo"
         android:textSize="15dp"
         android:id="@+id/item_title_tv"
-        android:textColor="@color/colorIcons"
-        android:layout_below="@id/item_creationDate_tv" />
+        android:textColor="@color/colorPrimaryDark"  />
 
     <TextView
         android:layout_width="wrap_content"
@@ -42,7 +24,7 @@
         android:layout_below="@id/item_title_tv"
         android:textSize="15dp"
         android:layout_marginBottom="5dp"
-        android:textColor="@color/colorIcons"/>
+        android:textColor="@color/colorPrimaryDark"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -50,6 +32,6 @@
         android:id="@+id/item_status_tv"
         android:layout_below="@id/item_object_tv"
         android:textSize="10dp"
-        android:textColor="@color/colorIcons"/>
+        android:textColor="@color/colorPrimaryDark"/>
 
 </RelativeLayout>

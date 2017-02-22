@@ -11,54 +11,35 @@
     android:layout_below="@id/add_toolbar"
     android:padding="10dp">
 
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Finish"
-        android:layout_alignParentRight="true"
-        android:id="@+id/add_dateend"
-        android:layout_below="@id/add_toolbar"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/add_todayDate"
-        android:text="Start"
-        android:layout_marginBottom="5dp"
-        android:layout_below="@id/add_toolbar"/>
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/titolo"
         android:id="@+id/add_title_TV"
-        android:layout_below="@id/add_todayDate"
-        android:layout_marginBottom="5dp"/>
+        android:layout_marginBottom="5dp"
+        android:textColor="@color/colorPrimaryDark"/>
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/titolo"
         android:id="@+id/add_title_ET"
-        android:layout_below="@id/add_title_TV"
-        android:background="@color/colorPrimaryLight"
-        android:layout_marginBottom="10dp" />
+        android:layout_below="@id/add_title_TV" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/oggetto"
         android:id="@+id/add_object_TV"
-        android:layout_below="@id/add_title_ET"/>
+        android:layout_below="@id/add_title_ET"
+        android:textColor="@color/colorPrimaryDark"/>
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/oggetto"
         android:id="@+id/add_object_ET"
-        android:layout_below="@id/add_object_TV"
-        android:background="@color/colorPrimaryLight"/>
+        android:layout_below="@id/add_object_TV" />
 
 </RelativeLayout>
 

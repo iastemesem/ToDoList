@@ -1,5 +1,8 @@
 package com.iastemesem.todolist;
 
+import android.app.Activity;
+import android.content.Intent;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,7 +18,9 @@ import java.util.ArrayList;
 
 public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.NoteVH> {
 
+    public static final String POSIZIONE = "posizione" ;
     ArrayList <Note> dataSet = new ArrayList<>();
+    View item;
 
     public void addNote (Note note) {
         dataSet.add(0, note);
@@ -32,8 +37,6 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.NoteVH> {
     public void onBindViewHolder(NoteVH holder, int position) {
         Note note = dataSet.get(position);
         holder.title.setText(note.getTitle());
-        holder.dataCreazione.setText(note.getDataCreazione());
-        holder.dataScadenza.setText(note.getDataScadenza());
         holder.object.setText(note.getBody());
         holder.status.setText("Running");
     }
@@ -43,18 +46,42 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.NoteVH> {
         return dataSet.size();
     }
 
-    public class NoteVH extends RecyclerView.ViewHolder {
-        TextView title, object, dataCreazione, dataScadenza, status;
+    public void updateNote(String titolo, String oggetto, int posizione) {
+        Note note = dataSet.get(posizione);
+        note.setTitle(titolo);
+        note.setBody(oggetto);
+        dataSet.set(posizione, note);
+        notifyItemChanged(posizione);
+    }
 
+    public void deleteNote(int posizione) {
+        dataSet.remove(posizione);
+        notifyItemRemoved(posizione);
+    }
+
+    public class NoteVH extends RecyclerView.ViewHolder implements View.OnClickListener {
+        TextView title, object, status;
+        View item;
         public NoteVH(View itemView) {
             super(itemView);
             title = (TextView) itemView.findViewById(R.id.item_title_tv);
             object = (TextView) itemView.findViewById(R.id.item_object_tv);
-            dataCreazione = (TextView) itemView.findViewById(R.id.item_creationDate_tv);
-            dataScadenza = (TextView) itemView.findViewById(R.id.item_dataScadenza_tv);
             status = (TextView) itemView.findViewById(R.id.item_status_tv);
+            item = itemView.findViewById(R.id.item_note_activity);
+            item.setOnClickListener(this);
 
         }
 
+        @Override
+        public void onClick(View v) {
+            if (v.getId() == R.id.item_note_activity){
+                Intent intent = new Intent(v.getContext(), UpdateActivity.class);
+                intent.putExtra(AddActivity.TITLE, title.getText().toString() );
+                intent.putExtra(AddActivity.OBJECT, object.getText().toString());
+                intent.putExtra(POSIZIONE, getAdapterPosition());
+                AppCompatActivity info = (AppCompatActivity) itemView.getContext();
+                info.startActivityForResult(intent, 2);
+            }
+        }
     }
 }

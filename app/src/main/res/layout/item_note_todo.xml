@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="wrap_content"
+    android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@color/colorIcons"
     android:padding="10dp"
@@ -14,7 +14,8 @@
         android:text="@string/titolo"
         android:textSize="15dp"
         android:id="@+id/item_title_tv"
-        android:textColor="@color/colorPrimaryDark"  />
+        android:textColor="@color/colorPrimaryDark"
+        android:textStyle="bold"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -25,13 +26,22 @@
         android:textSize="15dp"
         android:layout_marginBottom="5dp"
         android:textColor="@color/colorPrimaryDark"/>
-    <TextView
+    <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="@string/status"-->
+        <!--android:id="@+id/item_status_tv"-->
+        <!--android:layout_below="@id/item_object_tv"-->
+        <!--android:textSize="10dp"-->
+        <!--android:textColor="@color/colorPrimaryDark"/>-->
+    <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/status"
-        android:id="@+id/item_status_tv"
+        android:src="@drawable/ic_bookmark_black_18dp"
+        android:id="@+id/item_btn_special"
         android:layout_below="@id/item_object_tv"
-        android:textSize="10dp"
-        android:textColor="@color/colorPrimaryDark"/>
+        android:layout_alignParentEnd="true"
+        android:background="@color/colorIcons"
+        android:visibility="invisible"/>
 
 </RelativeLayout>

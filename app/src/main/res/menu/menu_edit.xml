@@ -4,8 +4,14 @@
     <item
         android:id="@+id/action_confirm"
         android:orderInCategory="100"
-        android:icon="@drawable/ic_check_grey600_24dp"
+        android:icon="@drawable/ic_check_black_48dp"
         android:title="@string/confirm"
         app:showAsAction="always"
         />
+    <item
+        android:id="@+id/action_special"
+        android:orderInCategory="100"
+        android:icon="@drawable/ic_bookmark_border_black_48dp"
+        app:showAsAction="always"
+        android:title="@string/special"/>
 </menu>

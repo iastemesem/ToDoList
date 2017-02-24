@@ -10,9 +10,26 @@ import java.util.GregorianCalendar;
 
 public class Note {
 
-
+    private int id;
     private String title;
     private String body;
+    private short special;
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public short getIsSpecial() {
+        return special;
+    }
+
+    public void setIsSpecial(short special) {
+        this.special = special;
+    }
 
     public  enum stato{
         COMPLETE,
@@ -20,11 +37,14 @@ public class Note {
         ARCHIVED,
         RUNNING
     }
+    public Note(){
 
-    public Note( String title, String body) {
+    }
+
+    public Note( String title, String body, short special) {
         this.title = title;
         this.body = body;
-
+        this.special = (short) special;
     }
 
 

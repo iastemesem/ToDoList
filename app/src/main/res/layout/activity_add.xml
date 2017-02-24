@@ -24,7 +24,8 @@
         android:layout_height="wrap_content"
         android:hint="@string/titolo"
         android:id="@+id/add_title_ET"
-        android:layout_below="@id/add_title_TV" />
+        android:layout_below="@id/add_title_TV"
+        android:inputType="textCapSentences" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -39,7 +40,8 @@
         android:layout_height="wrap_content"
         android:hint="@string/oggetto"
         android:id="@+id/add_object_ET"
-        android:layout_below="@id/add_object_TV" />
+        android:layout_below="@id/add_object_TV"
+        android:inputType="textCapSentences"/>
 
 </RelativeLayout>
 

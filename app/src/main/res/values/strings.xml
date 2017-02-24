@@ -14,4 +14,5 @@
     <string name="confirm"> Conferma </string>
     <string name="update">Update</string>
     <string name="delete">Delete</string>
+    <string name="special">Speciale</string>
 </resources>

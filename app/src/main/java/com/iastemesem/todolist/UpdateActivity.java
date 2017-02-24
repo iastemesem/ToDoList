@@ -15,6 +15,8 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
 
+import static android.content.RestrictionsManager.RESULT_DENIED;
+
 /**
  * Created by Gianfranco on 22/02/2017.
  */
@@ -97,7 +99,9 @@ public class UpdateActivity extends AppCompatActivity implements View.OnClickLis
         }
 
         if(id == android.R.id.home){
-
+            Intent intent = new Intent();
+            setResult(RESULT_DENIED, intent);
+            finish();
         }
 
         return super.onOptionsItemSelected(item);

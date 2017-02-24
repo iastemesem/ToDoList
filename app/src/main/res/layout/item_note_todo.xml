@@ -5,7 +5,7 @@
     android:background="@color/colorIcons"
     android:padding="10dp"
     android:layout_margin="10dp"
-    android:elevation="10dp"
+    android:elevation="30dp"
     android:id="@+id/item_note_activity">
 
     <TextView
@@ -25,7 +25,7 @@
         android:layout_below="@id/item_title_tv"
         android:textSize="15dp"
         android:layout_marginBottom="5dp"
-        android:textColor="@color/colorPrimaryDark"/>
+        android:textColor="@color/colorPrimaryText"/>
     <!--<TextView-->
         <!--android:layout_width="wrap_content"-->
         <!--android:layout_height="wrap_content"-->

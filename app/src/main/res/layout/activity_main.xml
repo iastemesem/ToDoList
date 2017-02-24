@@ -14,7 +14,8 @@
         android:src="@drawable/ic_plus"
         android:layout_alignParentBottom="true"
         android:layout_margin="@dimen/material_component_floating_action_button_margin"
-        android:layout_alignParentRight="true" />
+        android:layout_alignParentRight="true"
+        android:elevation="40dp"/>
 
     <include layout="@layout/toolbar"
         android:id="@+id/main_toolbar"

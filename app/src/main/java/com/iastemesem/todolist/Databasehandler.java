@@ -22,7 +22,7 @@ public class Databasehandler extends SQLiteOpenHelper {
 
     // All Static variables
     // Database Version
-    private static final int DATABASE_VERSION = 5;
+    private static final int DATABASE_VERSION = 6;
 
     // Database Name
     private static final String DATABASE_NAME = "notes";
@@ -142,5 +142,12 @@ public class Databasehandler extends SQLiteOpenHelper {
         }
 
         return noteList;
+    }
+
+    public void deleteAllNote() {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_NOTES);
+        onCreate(db);
+        db.close();
     }
 }

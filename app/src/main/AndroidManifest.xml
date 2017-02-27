@@ -9,7 +9,7 @@
         android:theme="@style/AppTheme">
         
         <activity
-            android:label="ToDo List"
+            android:label="Notes"
             android:name=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -19,11 +19,11 @@
         </activity>
 
         <activity
-            android:label="New Note"
+            android:label="Add"
             android:name=".AddActivity">
         </activity>
 
-        <activity android:label="Update Activity" android:name=".UpdateActivity"></activity>
+        <activity android:label="Update" android:name=".UpdateActivity"></activity>
 
     </application>
 

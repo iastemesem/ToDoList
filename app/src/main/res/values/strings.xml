@@ -17,4 +17,7 @@
     <string name="special">Speciale</string>
     <string name="preferiti">Preferiti</string>
     <string name="deleteAll">Delete All</string>
+    <string name="deleteAsk">Do you want to delete all?</string>
+    <string name="done">Done</string>
+    <string name="cancel">Cancel</string>
 </resources>

@@ -2,14 +2,17 @@ package com.iastemesem.todolist;
 
 import android.app.Activity;
 import android.app.Application;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -68,6 +71,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 //adapter.addNote(note);
                 dbHandler.addNote(note);
                 adapter.setDataSet(dbHandler.getAllNotes());
+                toolbar.getMenu().findItem(R.id.action_heart).setIcon(R.drawable.ic_bookmark_border_black_48dp);
+                onSpecial = false;
             }
         }else if (requestCode == 2){
             if (resultCode == RESULT_OK){
@@ -78,11 +83,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 adapter.updateNote(titolo, oggetto, posizione,speciale);
                 dbHandler.updateNote(adapter.getNote(posizione));
                 adapter.setDataSet(dbHandler.getAllNotes());
+                toolbar.getMenu().findItem(R.id.action_heart).setIcon(R.drawable.ic_bookmark_border_black_48dp);
+                onSpecial = false;
             }if(resultCode == RESULT_CANCELED){
                 int posizione = data.getIntExtra(NoteAdapter.POSIZIONE,0);
 //                adapter.deleteNote(posizione);
                 dbHandler.deletNote(adapter.getNote(posizione));
                 adapter.setDataSet(dbHandler.getAllNotes());
+                toolbar.getMenu().findItem(R.id.action_heart).setIcon(R.drawable.ic_bookmark_border_black_48dp);
+                onSpecial = false;
             }
         }
     }
@@ -125,7 +134,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         int id = item.getItemId();
 
         if (id == R.id.action_delete_all) {
-            
+            showDeleteAllDialog();
             return true;
         }
 
@@ -145,4 +154,33 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         return super.onOptionsItemSelected(item);
     }
 
+    public void showDeleteAllDialog() {
+        AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
+        LayoutInflater inflater = this.getLayoutInflater();
+//        final View dialogView = inflater.inflate(R.layout.dialog_delete_all, null);
+//        dialogBuilder.setView(dialogView);
+
+        dialogBuilder.setTitle(R.string.deleteAll);
+        dialogBuilder.setMessage(R.string.deleteAsk);
+
+        DialogInterface.OnClickListener dialogClickListener = new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                if (i == DialogInterface.BUTTON_POSITIVE) {
+                    //do something with edt.getText().toString();
+                    dbHandler.deleteAllNote();
+                    adapter.setDataSet(dbHandler.getAllNotes());
+                }
+
+            }
+        };
+        dialogBuilder.setPositiveButton(R.string.done,dialogClickListener);
+
+
+        dialogBuilder.setNegativeButton(R.string.cancel,dialogClickListener);
+        AlertDialog b = dialogBuilder.create();
+        b.show();
+
+
+    }
 }

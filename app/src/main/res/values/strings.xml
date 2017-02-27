@@ -15,4 +15,6 @@
     <string name="update">Update</string>
     <string name="delete">Delete</string>
     <string name="special">Speciale</string>
+    <string name="preferiti">Preferiti</string>
+    <string name="deleteAll">Delete All</string>
 </resources>

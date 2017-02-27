@@ -123,4 +123,24 @@ public class Databasehandler extends SQLiteOpenHelper {
     }
 
 
+    public ArrayList<Note> specialNote() {
+        ArrayList<Note> noteList = new ArrayList<>();
+        String selectQuery = "SELECT * FROM " + TABLE_NOTES + " WHERE " + KEY_SPECIALE + " = 1";
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(selectQuery, null);
+
+        if (cursor.moveToFirst()){
+            do {
+                Note note = new Note();
+                note.setId(Integer.parseInt(cursor.getString(0)));
+                note.setTitle(cursor.getString(1));
+                note.setBody(cursor.getString(2));
+                note.setIsSpecial(cursor.getShort(3));
+                // Adding note to list
+                noteList.add(note);
+            }while (cursor.moveToNext());
+        }
+
+        return noteList;
+    }
 }

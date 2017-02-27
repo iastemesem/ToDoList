@@ -10,6 +10,9 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RelativeLayout;
@@ -29,6 +32,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Toolbar toolbar;
     Databasehandler dbHandler ;
     RelativeLayout mRelativeLayout;
+    boolean onSpecial = false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,10 +54,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         toolbar = (Toolbar) findViewById(R.id.main_toolbar);
         setSupportActionBar(toolbar);
-
-
-
-
 
     }
 
@@ -108,4 +109,40 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public boolean onLongClick(View v) {
         return false;
     }
+
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_main, menu);
+
+        return super.onCreateOptionsMenu(menu);
+    }
+
+
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+
+        if (id == R.id.action_delete_all) {
+            
+            return true;
+        }
+
+        if (id == R.id.action_heart){
+            if (onSpecial == false){
+                item.setIcon(R.drawable.ic_bookmark_black_48dp);
+                adapter.setDataSet(dbHandler.specialNote());
+                onSpecial = true;
+            }else {
+                item.setIcon(R.drawable.ic_bookmark_border_black_48dp);
+                adapter.setDataSet(dbHandler.getAllNotes());
+                onSpecial = false;
+            }
+
+     }
+
+        return super.onOptionsItemSelected(item);
+    }
+
 }

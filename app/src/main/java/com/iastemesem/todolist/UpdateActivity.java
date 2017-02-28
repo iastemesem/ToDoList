@@ -57,7 +57,6 @@ public class UpdateActivity extends AppCompatActivity implements View.OnClickLis
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu_update, menu);
-//       MenuItem item =  menu.getItem(R.id.update_action_special);
         if (speciale == (short)1){
             toolbar.getMenu().findItem(R.id.update_action_special).setIcon(R.drawable.ic_bookmark_black_48dp);
         }else  toolbar.getMenu().findItem(R.id.update_action_special).setIcon(R.drawable.ic_bookmark_border_black_48dp);
@@ -71,17 +70,13 @@ public class UpdateActivity extends AppCompatActivity implements View.OnClickLis
 
         if (id == R.id.update_action_special){
             Log.d("MENU", String.valueOf(speciale));
-           // item.setIcon(R.drawable.ic_bookmark_black_48dp);
             if (speciale == AddActivity.TRUE_SPECIAL){
-                Log.d("aaaaaaaaaaaaaaaaaaa","rtgyhujikol");
                 toolbar.getMenu().findItem(R.id.update_action_special).setIcon(R.drawable.ic_bookmark_border_black_48dp);
-                //item.setIcon(R.drawable.ic_bookmark_black_48dp);
                 speciale = AddActivity.FALSE_SPECIAL;
                 return true;
             }
             if (speciale == AddActivity.FALSE_SPECIAL){
                 toolbar.getMenu().findItem(R.id.update_action_special).setIcon(R.drawable.ic_bookmark_black_48dp);
-               // item.setIcon(R.drawable.ic_bookmark_border_black_48dp);
                 speciale = AddActivity.TRUE_SPECIAL;
                 return true;
             }

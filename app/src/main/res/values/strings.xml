@@ -20,4 +20,5 @@
     <string name="deleteAsk">Do you want to delete all?</string>
     <string name="done">Done</string>
     <string name="cancel">Cancel</string>
+    <string name="draw">Draw</string>
 </resources>

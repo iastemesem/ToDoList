@@ -26,9 +26,8 @@ public class AddActivity extends AppCompatActivity implements View.OnClickListen
     public static final short FALSE_SPECIAL = 0;
     private short special = 0;
 
-    Button add, cancel;
     EditText title, object;
-    TextView dateStart, dateEnd;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,8 +63,6 @@ public class AddActivity extends AppCompatActivity implements View.OnClickListen
         }
 
         if (id == R.id.action_special){
-//            item.setIcon(R.drawable.ic_bookmark_black_48dp);
-//            special = TRUE_SPECIAL;
             if (special == TRUE_SPECIAL ){
                 item.setIcon(R.drawable.ic_bookmark_border_black_48dp);
                 special = FALSE_SPECIAL;

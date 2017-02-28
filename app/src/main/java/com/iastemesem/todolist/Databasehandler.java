@@ -123,7 +123,7 @@ public class Databasehandler extends SQLiteOpenHelper {
     }
 
 
-    public ArrayList<Note> specialNote() {
+    public ArrayList<Note> getSpecialNote() {
         ArrayList<Note> noteList = new ArrayList<>();
         String selectQuery = "SELECT * FROM " + TABLE_NOTES + " WHERE " + KEY_SPECIALE + " = 1";
         SQLiteDatabase db = this.getReadableDatabase();

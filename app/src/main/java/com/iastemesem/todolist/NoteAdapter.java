@@ -46,10 +46,10 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.NoteVH> {
         }
     }
 
-//    public void deleteNote(int posizione) {
-//        dataSet.remove(posizione);
-//        notifyItemRemoved(posizione);
-//    }
+    public void deleteNote(int posizione) {
+        dataSet.remove(posizione);
+        notifyItemRemoved(posizione);
+    }
 
 
     public Note getNote(int posizione) {

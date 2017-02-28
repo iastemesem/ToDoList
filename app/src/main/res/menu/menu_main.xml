@@ -14,4 +14,10 @@
         android:icon="@drawable/ic_clear_black_48dp"
         app:showAsAction="always"
         android:title="@string/deleteAll"/>
+    <item
+        android:id="@+id/action_draw"
+        android:orderInCategory="100"
+        android:icon="@drawable/ic_create_black_48dp"
+        app:showAsAction="always"
+        android:title="@string/draw" />
  </menu>
